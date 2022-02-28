@@ -5,34 +5,27 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
-        //Declarar una variable de tipo int llamada numero1.
+        //llamado a una funcion que suma tres valores
 
-        int numero1 = 0;
+        int a, b, c, resultado;
 
-        //Mostrarla por pantalla.
+        a = 10;
+        b = 35;
+        c = 25;
 
-        System.out.println("El valor de la variable numero1 es " + numero1);
+        resultado = suma( a, b, c);
 
-        //Modificar el valor de la variable numero1.
+        System.out.println("El resultado de la suma es: " + resultado);
 
-        numero1 += 1;
+    }
 
-        //Mostrarla por pantalla.
+    //Función
+    public static int suma (int a, int b, int c){
 
-        System.out.println("El nuevo valor de la variable es " + numero1);
+        int resultado;
 
-        //Crea un array de 4 elementos.
+        resultado = a + b + c;
 
-        int miArray[] = new int[4];
-
-        miArray[0] = 2;
-        miArray[1] = 3;
-        miArray[2] = 5;
-        miArray[3] = 10;
-
-        //Mostrar el elemento en la posición 0.
-
-        System.out.println("El elemento en la primera posicion es " + miArray[0]);
-
+        return resultado;
     }
 }
