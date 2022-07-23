@@ -7,6 +7,11 @@ abstract public class Coche {
     int velocidad = 0;
     
     public Coche(){}
+    public Coche(String modelo, String marca, String patente){
+        this.modelo = modelo;
+        this.marca = marca;
+        this.patente = patente;
+    }
 
     public void Encender(){
         System.out.println("El coche está encendido.");
