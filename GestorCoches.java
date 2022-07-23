@@ -5,18 +5,9 @@ import java.util.ArrayList;
 public class GestorCoches {
     CochesDBMemoria cochesDB = new CochesDBMemoria();
 
-    public ArrayList<Coche> listarCoches(Coche coche) {
-        if (coche instanceof CocheElectrico) {
-            return cochesDB.cochesElectricos;
-        }
-
-        if (coche instanceof CocheDeCombustible) {
-            return cochesDB.cochesDeCombustion;
-        }
-
-        if (coche instanceof CocheHibrido){
-            return cochesDB.cochesHibridos;
-        }
+    public String listarCoches(ArrayList coches) {
+        for(int i = 0; i < coches.size(); i++)
+            return "Elemento en posición " + i + " " + coches;
 
         return null;
     }
@@ -44,51 +35,15 @@ public class GestorCoches {
     }
 
     public void crearCoche(Coche coche) {
-        if (coche instanceof CocheElectrico) {
-            if (cochesDB.buscar(coche) != null) {
-                System.out.println("El coche ya existe");
-            }else {
+        if (cochesDB.buscar(coche) != null) {
+            System.out.println("El coche ya existe");
+        }else {
 
-                cochesDB.crear(coche);
-            }
-        }
-
-        if (coche instanceof CocheDeCombustible) {
-            if (cochesDB.obtener(coche) != null) {
-                System.out.println("El coche ya existe");
-            }else {
-
-                cochesDB.crear(coche);
-            }
-        }
-
-        if (coche instanceof CocheHibrido){
-            if (cochesDB.buscar(coche) != null) {
-                System.out.println("El coche ya existe");
-            }else {
-
-                cochesDB.crear(coche);
-            }
+            cochesDB.crear(coche);
         }
     }
 
     public void borrarCoche(Coche coche) {
-        if (coche instanceof CocheElectrico) {
-            Coche cocheElectrico = new CocheElectrico();
-
-            cochesDB.borrar(cocheElectrico);
-        }
-
-        if (coche instanceof CocheDeCombustible) {
-            Coche cocheDeCombustible = new CocheDeCombustible();
-
-            cochesDB.borrar(cocheDeCombustible);
-        }
-
-        if (coche instanceof CocheHibrido){
-            Coche cocheHibrido = new CocheHibrido();
-
-            cochesDB.borrar(cocheHibrido);
-        }
+        cochesDB.borrar(coche);
     }
-    }
+}
