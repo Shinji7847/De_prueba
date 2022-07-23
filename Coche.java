@@ -5,6 +5,8 @@ abstract public class Coche {
     String marca = "";
     String patente = "";
     int velocidad = 0;
+    
+    public Coche(){}
 
     public void Encender(){
         System.out.println("El coche eléctrico está encendido.");
