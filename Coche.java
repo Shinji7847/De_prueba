@@ -9,7 +9,7 @@ abstract public class Coche {
     public Coche(){}
 
     public void Encender(){
-        System.out.println("El coche eléctrico está encendido.");
+        System.out.println("El coche está encendido.");
     }
     public void acelerar(){
         velocidad++;
@@ -22,6 +22,6 @@ abstract public class Coche {
         }
     }
     public void Apagar(){
-        System.out.println("El coche eléctrico está apagado.");
+        System.out.println("El coche está apagado.");
     }
 }
