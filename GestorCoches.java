@@ -44,6 +44,8 @@ public class GestorCoches {
     }
 
     public void borrarCoche(Coche coche) {
-        cochesDB.borrar(coche);
+        if (cochesDB.buscar(coche) != null) {
+            cochesDB.borrar(coche);
+        }
     }
 }
