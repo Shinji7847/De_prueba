@@ -20,10 +20,21 @@ public class CochesMain {
         cocheHibrido.modelo = "Mondeo";
         cocheHibrido.velocidad = 0;
 
+        Coche cocheDeCombustible = new CocheDeCombustible("Nafta");
+        cocheHibrido.patente = "ACC111";
+        cocheHibrido.marca = "Chevrolet";
+        cocheHibrido.modelo = "Meriva";
+        cocheHibrido.velocidad = 0;
+
         GestorCoches gestorCoches = new GestorCoches();
         gestorCoches.crearCoche(cocheElectrico);
         gestorCoches.crearCoche(cocheElectrico2);
-        gestorCoches.listarCoches(cocheElectrico);
+        gestorCoches.crearCoche(cocheHibrido);
+        gestorCoches.crearCoche(cocheDeCombustible);
+
+        gestorCoches.obtenerCoche(cocheHibrido);
+
+        System.out.println(gestorCoches.listarCoches(gestorCoches.cochesDB.coches));
 
     }
 }
