@@ -6,8 +6,8 @@ public class GestorCoches {
     CochesDBMemoria cochesDB = new CochesDBMemoria();
 
     public String listarCoches(ArrayList coches) {
-        for(int i = 0; i < coches.size(); i++)
-            return "Elemento en posición " + i + " " + coches;
+        for(Object c : coches)
+            return c.toString();
 
         return null;
     }
