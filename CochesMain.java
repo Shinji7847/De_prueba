@@ -2,6 +2,8 @@ package open_bootcamp.Coche_SOL_sesion24;
 
 public class CochesMain {
     public static void main(String[] args){
+        GestorCoches gestorCoches = new GestorCoches();
+
         Coche cocheElectrico = new CocheElectrico("Litio");
         cocheElectrico.patente = "ABC123";
         cocheElectrico.marca = "Chevrolet";
@@ -21,20 +23,22 @@ public class CochesMain {
         cocheHibrido.velocidad = 0;
 
         Coche cocheDeCombustible = new CocheDeCombustible("Nafta");
-        cocheHibrido.patente = "ACC111";
-        cocheHibrido.marca = "Chevrolet";
-        cocheHibrido.modelo = "Meriva";
-        cocheHibrido.velocidad = 0;
+        cocheDeCombustible.patente = "ACC111";
+        cocheDeCombustible.marca = "Chevrolet";
+        cocheDeCombustible.modelo = "Meriva";
+        cocheDeCombustible.velocidad = 0;
 
-        GestorCoches gestorCoches = new GestorCoches();
         gestorCoches.crearCoche(cocheElectrico);
+        gestorCoches.crearCoche(cocheDeCombustible);
         gestorCoches.crearCoche(cocheElectrico2);
         gestorCoches.crearCoche(cocheHibrido);
-        gestorCoches.crearCoche(cocheDeCombustible);
 
-        gestorCoches.obtenerCoche(cocheHibrido);
+        System.out.println(gestorCoches.cochesDB.coches.size());
+        gestorCoches.listarCoches(gestorCoches.cochesDB.coches);
 
-        System.out.println(gestorCoches.listarCoches(gestorCoches.cochesDB.coches));
+        gestorCoches.obtenerCoche(cocheHibrido, "Mondeo");
 
+        Coche mondeo = gestorCoches.obtenerCoche(cocheHibrido, "Mondeo");
+        System.out.println("La patente del coche obtenido: " + cocheHibrido.patente);
     }
 }
