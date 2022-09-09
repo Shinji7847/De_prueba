@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class CochesDBMemoria {
     //Esta clase SOLO gestiona datos
 
-    ArrayList<Coche> coches = new ArrayList<Coche>();
+    ArrayList<Coche> coches = new ArrayList<>();
 
     public CochesDBMemoria(){}
 
@@ -27,9 +27,10 @@ public class CochesDBMemoria {
     }
 
     public void borrar(Coche coche) {
+        ArrayList<Coche> coches = obtener();
+
         for (int i = 0; i < coches.size(); i++) {
-            Coche cocheElectrico = coches.get(i);
-            if (cocheElectrico.patente.equalsIgnoreCase(cocheElectrico.patente.toLowerCase())) {
+            if (coches.get(i).patente.equalsIgnoreCase(coche.patente)) {
                 coches.remove(i);
             }
         }
