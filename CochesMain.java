@@ -40,5 +40,10 @@ public class CochesMain {
 
         Coche mondeo = gestorCoches.obtenerCoche(cocheHibrido, "Mondeo");
         System.out.println("La patente del coche obtenido: " + cocheHibrido.patente);
+        
+        gestorCoches.borrarCoche(cocheElectrico2);
+
+        System.out.println(gestorCoches.cochesDB.coches.size());
+        gestorCoches.listarCoches(gestorCoches.cochesDB.coches);
     }
 }
